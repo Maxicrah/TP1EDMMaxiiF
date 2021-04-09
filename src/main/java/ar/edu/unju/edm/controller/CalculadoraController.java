@@ -49,4 +49,32 @@ public class CalculadoraController {
 		
 		return modelView;
 	}
+	@GetMapping("/calculoMultiplicacion")
+	public ModelAndView getCalculoMultiplicacion(@RequestParam (name = "num1") String num1 , @RequestParam (name = "num2") int num2) {
+		
+	
+		unaCalculadora.setNum1(Integer.valueOf(num1));
+		unaCalculadora.setNum2(num2);
+		
+		int resultadoMultiplicar = unaCalculadora.multiplicar();
+		
+		ModelAndView modelView = new ModelAndView("resultado");
+		modelView.addObject("resultadoMultiplicacion", resultadoMultiplicar);
+		
+		return modelView;
+	}
+	@GetMapping("/calculoDividir")
+	public ModelAndView getCalculoDividir(@RequestParam (name = "num1") String num1 , @RequestParam (name = "num2") int num2) {
+		
+	
+		unaCalculadora.setNum1(Integer.valueOf(num1));
+		unaCalculadora.setNum2(num2);
+		
+		int resultadoDivision = unaCalculadora.dividir();
+		
+		ModelAndView modelView = new ModelAndView("resultado");
+		modelView.addObject("resultadoMultiplicacion", resultadoDivision);
+		
+		return modelView;
+}
 }

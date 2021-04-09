@@ -19,7 +19,12 @@ public class Calculadora {
 	public int restar() {
 		return num1-num2;
 	}
-
+	public int multiplicar() {
+		return num1*num2;
+	}
+	public int dividir() {
+		return num1/num2;
+	}
 	public int getNum1() {
 		return num1;
 	}
